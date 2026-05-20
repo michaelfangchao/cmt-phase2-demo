@@ -47,6 +47,28 @@
   --shadow-md: 0 4px 12px rgba(0,0,0,0.10);
   --shadow-lg: 0 6px 16px rgba(0,0,0,0.08), 0 3px 6px -4px rgba(0,0,0,0.12);
   --shadow-ai: 0 2px 8px rgba(114,46,209,0.20);
+
+  /* v22: --cmt-* design token layer for Playbook-specific UI.
+     Previously referenced via var(--cmt-*) but never declared, causing silent
+     fallbacks in fresh browsers. Declared here as aliases of the existing
+     non-prefixed tokens — no new color values introduced. Underlying tokens
+     can evolve in the block above without touching individual --cmt-* rules. */
+  --cmt-primary: var(--primary);
+  --cmt-primary-hover: var(--primary-hover);
+  --cmt-primary-bg: var(--primary-bg);
+  --cmt-primary-border: var(--primary-border);
+  --cmt-ai: var(--ai);
+  --cmt-ai-bg: var(--ai-bg);
+  --cmt-ai-border: var(--ai-border);
+  --cmt-text: var(--text-primary);
+  --cmt-text-secondary: var(--text-secondary);
+  --cmt-text-tertiary: var(--text-tertiary);
+  --cmt-border: var(--border);
+  --cmt-border-light: var(--border-light);
+  --cmt-page-bg: var(--page-bg);
+  --cmt-table-head-bg: var(--border-light); /* no direct equivalent in the non-prefixed layer — aliased to --border-light (#F0F0F0) as the closest existing token. Override if you want #FAFAFA. */
+  --cmt-font: var(--font);
+  --cmt-font-mono: var(--font-mono);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
