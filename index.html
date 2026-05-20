@@ -1968,8 +1968,33 @@ function scrPlaybook() {
 <link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;>
 <link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin>
 <link href=&quot;https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Serif:wght@400;500;600&amp;display=swap&quot; rel=&quot;stylesheet&quot;>
-<link rel=&quot;stylesheet&quot; href=&quot;design-system/tokens.css&quot;>
 <style>
+  /* v23: Design tokens for the Playbook iframe srcdoc scope.
+     Previously expected to come from external design-system/tokens.css (now removed
+     in Step 1). Inlined here so the iframe is self-contained. Token names mirror
+     the outer document layer (in :root at the top of the file) but are independently
+     declared because CSS custom properties do not cross iframe boundaries.
+     Aliased to consistent web color values rather than var() chains, since the
+     iframe has no access to outer-scope variables. */
+  :root {
+    --cmt-primary: #1677FF;
+    --cmt-primary-hover: #4096FF;
+    --cmt-primary-bg: #E6F4FF;
+    --cmt-primary-border: #91CAFF;
+    --cmt-ai: #722ED1;
+    --cmt-ai-bg: #F9F0FF;
+    --cmt-ai-border: #EFDBFF;
+    --cmt-text: rgba(0,0,0,0.88);
+    --cmt-text-secondary: rgba(0,0,0,0.65);
+    --cmt-text-tertiary: rgba(0,0,0,0.45);
+    --cmt-border: #D9D9D9;
+    --cmt-border-light: #F0F0F0;
+    --cmt-page-bg: #F0F2F5;
+    --cmt-table-head-bg: #FAFAFA;
+    --cmt-font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --cmt-font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
   /* ============ Reset / base ============ */
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; overflow: hidden; }
